@@ -28,7 +28,7 @@ export default function Section() {
                         </button>
                     </div>
                     <div className='row-start-2 row-end-4  justify-end items-end flex'>
-                        <Image src={girl} alt="girl" />
+                        <Image src={girl} alt="girl" className='object-cover' />
                     </div>
                 </div>
 
