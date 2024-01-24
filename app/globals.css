@@ -35,3 +35,29 @@
 .testimonial-exit {
     animation: slideOut 0.5s forwards;
 }
+
+
+
+.nav.open {
+    transition: all 0.3s ease-in-out;
+}
+
+.nav ul.hidden {
+    display: none;
+    transition: all 0.3s ease-in-out;
+}
+
+.nav button span {
+    display: none;
+}
+
+@media (max-width: 1024px) {
+    .nav button span {
+        display: block;
+    }
+}
+
+
+.nav ul {
+    transition: all 0.3s ease-in-out;
+}

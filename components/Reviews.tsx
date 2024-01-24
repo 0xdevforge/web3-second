@@ -12,7 +12,7 @@ const testimonials = [
         role: "Senior Software Engineer, Engineering Lead"
     },
     {
-        text: "Working with this team has been a game changer. They truly understand the meaning of collaboration and go above and beyond to meet project deadlines.",
+        text: "Working with this team has been a game changer. They truly understand the meaning of collaboration and go above and beyond to meet project deadlines..I love that talent own a part of the platform through BTRST tokens",
         author: "Jane Doe",
         role: "Project Manager"
     },
@@ -35,26 +35,28 @@ const testimonials = [
 
 function Testimonial({ testimonial, index, total, onNext, onPrev }: any) {
     return (
-        <div className="mx-32  py-20 bg-[#eff4e2] shadow-2xl rounded-md">
-            <div className="flex items-center gap-3  justify-end pr-16">
-                <span className="text-2xl mr-2">
+        <div className="lg:mx-20 mx-5 py-20 bg-[#eff4e2] shadow-md rounded-md">
+            <div className="flex items-start lg:items-center justify-between gap-3 px-10 lg:justify-end lg:pr-16">
+                <span className="lg:text-2xl mr-2">
                     <span className="text-gray-900 font-medium">{(index + 1).toString().padStart(2, '0')}</span>
                     /
                     <span className="text-gray-400">{total.toString().padStart(2, '0')}</span>
                 </span>
-                <button onClick={onPrev}>
-                    <Image src={right} alt="left" className="rotate-180" />
-                </button>
-                <button onClick={onNext}>
-                    <Image src={right} alt="right" />
-                </button>
+                <div className="flex gap-4">
+                    <button onClick={onPrev}>
+                        <Image src={right} alt="left" className="rotate-180" />
+                    </button>
+                    <button onClick={onNext}>
+                        <Image src={right} alt="right" />
+                    </button>
+                </div>
             </div>
-            <div className="flex flex-col items-center text-start pl-12 pr-48">
+            <div className="flex mt-12 lg:mt-4 flex-col items-center text-start lg:pl-12  pl-10 pr-24 lg:pr-48">
                 <div className="testimonial-enter">
-                    <p className="text-2xl font-medium tracking-wide mb-4">
+                    <p className="lg:text-2xl text-md font-medium tracking-wide mb-4 line-clamp-[7]">
                         &quot;{testimonial.text}&quot;
                     </p>
-                    <div className="flex items-center mb-2 mt-6">
+                    <div className="lg:flex gap-2 items-center mb-2 mt-6">
                         <Image
                             className="w-16 h-16 rounded-full mr-4"
                             width={64}
@@ -62,9 +64,9 @@ function Testimonial({ testimonial, index, total, onNext, onPrev }: any) {
                             src={`https://placehold.co/64x64?text=${testimonial.author.charAt(0)}`}
                             alt={`Portrait of ${testimonial.author}, ${testimonial.role}`}
                         />
-                        <div>
-                            <p className="font-semibold text-xl">{testimonial.author}</p>
-                            <p className="text-xl font-semibold">{testimonial.role}</p>
+                        <div className="">
+                            <p className="lg:font-semibold lg:text-xl text-sm">{testimonial.author}</p>
+                            <p className="lg:font-semibold lg:text-xl text-sm">{testimonial.role}</p>
                         </div>
                     </div>
                 </div>
