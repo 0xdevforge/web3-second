@@ -2,8 +2,18 @@ import Image from 'next/image'
 import React from 'react'
 import art from "@/public/art.webp";
 import girl from "@/public/girl.png";
+import { motion } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
+
 
 export default function Section() {
+    const [ref1, inView1] = useInView({
+        triggerOnce: true, // Change this to false if you want the animation to trigger again whenever it comes in view
+    });
+
+    const [ref2, inView2] = useInView({
+        triggerOnce: true,
+    });
     return (
         <div>
             <div className='text-center space-y-6 my-12 sm:hidden'>
@@ -25,16 +35,24 @@ export default function Section() {
                 <button className="border-black py-1 px-6 border-2 rounded-3xl bg-black text-white transition-all duration-300 hover:bg-white hover:text-black  cursor-pointer">
                     Sign up
                 </button>
-                <div className=' px-6 rounded-md pt-8'>
+                <motion.div ref={ref1}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: inView1 ? 1 : 0 }}
+                    transition={{ delay: 0.2 }} className=' px-6 rounded-md pt-8'>
                     <Image src={girl} alt="girl" />
-                </div>
+                </motion.div>
             </div>
             <div className='w-full  min-h-screen
-        lg:grid my-12 hidden 
+        lg:grid my-32 hidden 
         grid-cols-12  '>
-                <div className='col-span-4 '>
+                <motion.div
+                    ref={ref2}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: inView2 ? 1 : 0 }}
+                    transition={{ delay: 0.2 }}
+                    className='col-span-4 '>
                     <Image src={art} alt="art" className=" " />
-                </div>
+                </motion.div>
 
                 <div className="col-span-4 text-center mt-8 space-y-5">
                     <span className='text-xl font-semibold '>
@@ -53,9 +71,13 @@ export default function Section() {
                     </p>
                 </div>
 
-                <div className='col-span-4 justify-end grid items-end'>
+                <motion.div
+                    ref={ref2}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: inView2 ? 1 : 0 }}
+                    transition={{ delay: 0.2 }} className='col-span-4 justify-end grid items-end'>
                     <Image src={girl} alt="girl" />
-                </div>
+                </motion.div>
                 d</div >
         </div >
     )
