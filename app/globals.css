@@ -2,6 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+    font-family: 'Graphik Semibold';
+    src: url('/app/fonts/GraphikSemibold.otf') format('opentype');
+    font-display: swap;
+  }
+
+
 
 /* for animation slider review */
 @keyframes slideIn {
@@ -60,4 +67,9 @@
 
 .nav ul {
     transition: all 0.3s ease-in-out;
+}
+
+
+.heading{
+    font-size: 2rem;
 }

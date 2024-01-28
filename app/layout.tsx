@@ -1,8 +1,13 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
+import font from "next/font/local";
 
-const inter = Inter({ subsets: ["latin"] });
+
+const myFont = font({
+  src: '../app/fonts/GraphikRegular.otf',
+  display: 'swap',
+})
+
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -17,7 +22,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"></link></head>
-      <body className={inter.className}>
+      <body className={myFont.className}>
         {children}
       </body>
     </html>

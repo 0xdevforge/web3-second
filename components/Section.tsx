@@ -78,7 +78,7 @@ export default function Section() {
                     transition={{ delay: 0.2 }} className='col-span-4 justify-end grid items-end'>
                     <Image src={girl} alt="girl" />
                 </motion.div>
-                d</div >
+                </div >
         </div >
     )
 }

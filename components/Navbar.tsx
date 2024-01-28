@@ -16,7 +16,7 @@ export default function Navbar() {
     };
 
     return (
-        <nav className="w-full items-center flex justify-between p-4 lg:px-20 lg:py-4  bg-white">
+        <nav className="w-full fixed items-center flex justify-between p-4 lg:px-20 lg:py-4  bg-white z-30 shadow">
             <Image src={logo} alt="logo" className="cursor-pointer" />
 
             <div className="lg:hidden">
@@ -34,7 +34,7 @@ export default function Navbar() {
                             )}
                         </button>
                         {menuOpen && (
-                            <div className="lg:hidden absolute left-0 bg-white h-[360px]  w-full">
+                            <div className="lg:hidden absolute left-0 bg-white h-[360px]  w-full  ">
                                 <div className="flex flex-col px-6 pt-6">
                                     <span className="mb-2 font-semibold text-lg">For Companies</span>
                                     <span className="mb-2 font-semibold text-lg">For Talent</span>
@@ -43,7 +43,7 @@ export default function Navbar() {
                                     <span className="mb-2 font-semibold text-lg">Login</span>
                                     <div className="my-2 border-b-2 border-black">
                                     </div>
-                                    <div className=" flex gap-2 text-lg font-medium">
+                                    <div className=" flex gap-2 text-lg font-semibold">
                                         Sign Up <Image src={right} alt="right" />
                                     </div>
                                     <div className="my-2 border-b-2 border-black">

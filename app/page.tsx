@@ -22,14 +22,14 @@ export default function Home() {
   const animation = inView ? "show" : "hidden"; //
   return (
     <main className={`overflow-x-hidden pt-[${bannerHeight}]`}>
-    <motion.div ref={ref} variants={variants} initial="hidden" animate={animation}>
-      <Banner setBannerHeight={setBannerHeight} />
-    </motion.div>
-    <Navbar />
-    <Header />
-    <Reviews />
-    <Section />
-    <Footer />
-  </main>
+      <motion.div ref={ref} variants={variants} initial="hidden" animate={animation} className="fixed z-30 w-full">
+        <Banner setBannerHeight={setBannerHeight} />
+        <Navbar />
+      </motion.div>
+      <Header />
+      <Reviews />
+      <Section />
+      <Footer />
+    </main>
   );
 }
